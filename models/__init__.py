@@ -1,0 +1,1 @@
+from models.tenant import Tenant
