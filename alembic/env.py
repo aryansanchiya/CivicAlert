@@ -7,6 +7,7 @@ from alembic import context
 import os
 from models.tenant import Tenant
 from models.user import User
+from models.city import City
 
 
 # this is the Alembic Config object, which provides
