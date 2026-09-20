@@ -44,4 +44,7 @@ class City(Base):
         nullable=False
     )
     tenants = relationship("Tenant", back_populates="city")
-    
+
+    roads = relationship("Road", back_populates="city", cascade="all, delete-orphan")
+
+    areas = relationship("Area", back_populates="city", cascade="all, delete-orphan")

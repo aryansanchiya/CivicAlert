@@ -11,7 +11,7 @@ services:
     depends_on:
       - db
   db:
-    image: postgres:13
+    image: postgis/postgis:13-3.4
     container_name: civic_alert_db
 
     environment:
