@@ -13,7 +13,7 @@ class Road(Base):
 
     osm_id: Mapped[str] = mapped_column(String(50), nullable=True, index=True)
 
-    name: Mapped[str] = mapped_column(String(100), nullable=False)
+    name: Mapped[str] = mapped_column(String(100), nullable=True)
 
     geometry: Mapped[Geometry] = mapped_column(Geometry(geometry_type="LINESTRING", srid=4326, spatial_index=True), nullable=True)
 

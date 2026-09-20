@@ -19,19 +19,43 @@ class TenantStatus(str, Enum):
 class TenantCreate(BaseModel):
     """Schema for creating a new tenant."""
 
-    name: str = Field(..., max_length=255, min_length=2, description="The name of the tenant.")
+    name: str = Field(
+        ...,
+        max_length=255,
+        min_length=2,
+        description="The name of the tenant."
+    )
 
-    code: str = Field(..., max_length=100, min_length=2, description="A unique code for the tenant.")
-    
-    type: TenantType = Field(default=TenantType.MUNICIPALITY, description="The type of the tenant.")
+    city_id: int = Field(
+        ...,
+        description="The ID of the city associated with the tenant."
+    )
 
-    status: TenantStatus = Field(default=TenantStatus.PENDING, description="The status of the tenant.")
+    code: str = Field(
+        ...,
+        max_length=100,
+        min_length=2,
+        description="A unique code for the tenant."
+    )
+
+    type: TenantType = Field(
+        default=TenantType.MUNICIPALITY,
+        description="The type of the tenant."
+    )
+
+    status: TenantStatus = Field(
+        default=TenantStatus.PENDING,
+        description="The status of the tenant."
+    )
 
 class TenantResponse(BaseModel):
     """Schema for tenant response."""
 
     id: UUID
     name: str
+    city_id: int
     code: str
     type: TenantType
     status: TenantStatus
+
+    model_config = ConfigDict(from_attributes=True)
