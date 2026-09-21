@@ -28,15 +28,15 @@ def fetch_bhavnagar_roads():
     highway_regex = "|".join(ROAD_TYPES)
 
     query = f"""
-    [out:json][timeout:180];
+    [out:json][timeout:10];
 
     rel({BHAVNAGAR_DISTRICT_RELATION_ID});
 
     map_to_area -> .bhavnagar;
 
     way
-      ["highway"~"^({highway_regex})$"]
-      (area.bhavnagar);
+    ["highway"~"^(trunk|primary|secondary)$"]
+    (area.bhavnagar);
 
     out tags geom;
     """

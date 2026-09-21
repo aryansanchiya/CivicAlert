@@ -11,7 +11,7 @@ class Road(Base):
 
     city_id: Mapped[int] = mapped_column(Integer, ForeignKey("cities.id", ondelete="CASCADE"), nullable=False)
 
-    osm_id: Mapped[str] = mapped_column(String(50), nullable=True, index=True)
+    osm_id: Mapped[str] = mapped_column(String(50), nullable=True, index=True, unique=True)
 
     name: Mapped[str] = mapped_column(String(100), nullable=True)
 
