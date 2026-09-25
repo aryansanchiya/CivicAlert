@@ -4,6 +4,7 @@ from api.v1.user import router as user_router
 from api.v1.auth import router as auth_router
 from api.v1.crud_city import router as crud_city_router
 from api.v1.road import router as road_router
+from api.v1.incident import router as incident_router
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
@@ -31,3 +32,5 @@ app.include_router(user_router)
 app.include_router(auth_router)
 app.include_router(crud_city_router)
 app.include_router(road_router)
+app.include_router(incident_router)
+
