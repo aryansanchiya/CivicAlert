@@ -34,3 +34,4 @@ app.include_router(crud_city_router)
 app.include_router(road_router)
 app.include_router(incident_router)
 
+

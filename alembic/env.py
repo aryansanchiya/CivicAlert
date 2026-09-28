@@ -10,7 +10,8 @@ from models.user import User
 from models.city import City
 from models.road import Road
 from models.area import Area
-
+from models.incident import Incident
+from models.incident_road import IncidentRoad
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
